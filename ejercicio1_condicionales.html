@@ -1,0 +1,74 @@
+<script>
+ var tiva, iva, sub, tdes, des, np;
+ var compra = parseFloat(prompt('cuanto es la compra?')); 
+ if (compra >= 100000) {    
+   var res = prompt('tienes trageta credito ?');
+    if(res == 'si'){
+        
+        tiva = 0.05;
+        iva = tiva*compra;
+        sub = compra+iva;
+        tdes = 0.20;         
+        des = sub*tdes;
+        np = sub-des;
+    }
+     else if (res == 'no'){
+
+         var resp = prompt('entonces tiene targeta plata ?');
+
+        if (resp == 'si'){
+
+           tiva = 0.19;
+           iva = tiva*compra;
+           sub = compra+iva;
+           tdes = 0.10;               
+           des =  sub*tdes;
+           np =   sub-des;
+        }
+
+        else if (resp == 'no'){
+            documentt.write('NO TIENES MEDIO DEPAGO VALIDO');
+        }
+        else {
+            documet.write('DATOS INVALIDOS')
+        }        
+    }
+
+ }
+ else{
+
+    tiva = 0.19;
+    iva = tiva*compra;
+    sub = compra+iva;
+    tdes = 0;              
+    des = sub*tdes;
+    np = sub-des;
+ }
+
+ var fecha = new Date ();
+ var dia = fecha.getDate();
+ var mes = fecha.getMonth();
+ var anio = fecha.getFullYear();
+ 
+ var num = Math.random();
+        num = num * 1000 + 1;
+        num = Math.trunc(num);
+
+var resp3 = parseInt( prompt('como deseas ver la factura\n 1.IMPRESA \n 2.POR PANTALLA'));
+if (resp3 == 1){
+
+    window.print('FACTURA DE VENTA NUMERO : ',num,'FECHA:  ',dia,'/',mes,'/',año)
+    window.print('<BR>','COMPRA: ',compra,'<BR>','IVA: ',iva,'<BR>','SUBTOTAL: ',sub,'<BR>','DESCUENTO: ',des,'<BR>','NETO PAGAR: ',np);
+
+}
+else if (resp3 == 2){
+        
+document.write('FACTURA DE VENTA NUMERO : ',num,'  FECHA : ',dia,'/',mes,'/',anio);       
+document.write('<BR>','COMPRA: ',compra,'<BR>','IVA: ',iva,'<BR>','SUBTOTAL: ',sub,'<BR>','DESCUENTO: ',des,'<BR>','NETO PAGAR: ',np);
+}
+else{
+    document.write('INGRESO UNA OPCION INVALIDA')
+}
+</script>
+
+    

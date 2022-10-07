@@ -1,0 +1,44 @@
+<script>
+    var comi;
+    var ventas = parseFloat(prompt('VALOR DE SUS VENTAS'));
+    var reca = parseFloat(prompt('VALOR DE SUS RECAUDOS'));
+    
+
+    if(0 <= ventas && ventas < 1000000 && reca <=(ventas*0.90) ){
+
+        comi = 'NO TIENE COMISION'
+
+    }
+
+    else if (0 <= ventas && ventas < 1000000 && reca > (ventas*0.90)  )  {
+
+        comi = reca*0.50;
+    }
+    else if (1000000 <= ventas && ventas  < 10000000 && reca <=(ventas*0.70)){
+
+     comi = ventas*0.05;
+    }
+    else if (1000000 <= ventas && ventas < 10000000 && reca >(ventas*0.70)){
+
+     comi = reca*0.10;
+     }
+     else if (10000000 <= ventas && ventas  < 50000000 && reca <= (ventas*0.80)){
+
+        comi = ventas*0.10;
+
+     }
+     else if (10000000 <= ventas && ventas < 50000000 && reca >(ventas*0.80)){
+
+       comi = reca*0.15;
+
+     }
+     else if(ventas>50000000 && reca <=(ventas*0.90)){
+
+        comi = ventas*0.20;
+
+     }
+     else if (ventas > 50000000 && reca > (ventas*0.90)){
+        comi = reca*0.20;
+     }    
+ document.write(comi);
+</script>
